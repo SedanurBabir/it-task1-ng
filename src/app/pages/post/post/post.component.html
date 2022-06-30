@@ -1,0 +1,3 @@
+<div>
+  <app-table *ngIf="posts" [columnNames]="postColumns" [data]="posts" (rowClickFunction)="rowClick($event)"></app-table>
+</div>

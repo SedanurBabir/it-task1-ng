@@ -1,0 +1,19 @@
+<div>
+  <mat-card style="width:30%" *ngIf="user" >
+    <img mat-card-image src="https://random.imagecdn.app/500/150" alt="Photo of a Shiba Inu">
+    <p>Id:{{user.id}}</p>
+    <hr>
+    <p>Name:{{user.name}}</p>
+    <hr>
+    <p>Username:{{user.username}}</p>
+    <hr>
+    <p>Email:{{user.email}}</p>
+    <hr>
+    <p>Phone:{{user.phone}}</p>
+    <hr>
+    <p>Website:{{user.website}}</p>
+    <hr>
+  </mat-card>
+  <app-post *ngIf="user" [userid]="user.id" (setCurrentPostIdEvent)="setCurrentPostId($event)"></app-post>
+  <app-comment [postId]="currentPostId"></app-comment>
+</div>

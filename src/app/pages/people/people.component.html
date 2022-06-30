@@ -1,0 +1,12 @@
+<div>
+  <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Search..."  [(ngModel)]="searchText" (change)="search()">
+    </mat-form-field>
+  <app-table [columnNames]="peopleColumns" [data]="peoples" (rowClickFunction)="rowClick($event)" (deleteButtonFunction)="deletePeople($event)"></app-table>
+  <mat-paginator *ngIf="peoplesResponse" [length]=peoplesResponse.count
+            [pageSize]="10"
+            (page)="pageChanged($event)"
+            aria-label="Select page">
+</mat-paginator>
+</div>
